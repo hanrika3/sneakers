@@ -1,0 +1,458 @@
+.header{
+    display: flex;
+}
+
+.sneakers{
+    margin-left: 25px;
+}
+
+.sneakers-video{
+    width: 100%;
+}
+
+/* ここからハンバーガーメニュー */
+
+.btn {
+    /* ボタンの配置位置  */
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    /* ボタンの大きさ  */
+    width: 48px;
+    height: 48px;
+    /* バーガーの線をボタン範囲の中心に配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 最前面に */
+    z-index: 10;
+}
+
+  /***** 真ん中のバーガー線 *****/
+.btn-line {
+    /* 線の長さと高さ */
+    width: 100%;
+    height: 4px;
+    /* バーガー線の色 */
+    background-color: #333;
+    /* バーガー線の位置基準として設定 */
+    position: relative;
+    transition: .2s;
+}
+
+  /***** 上下のバーガー線 *****/
+.btn-line::before,
+.btn-line::after {
+    content: "";
+    /* 基準線と同じ大きさと色 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transition: .2s;
+}
+
+.btn-line::before {
+    /* 上の線の位置 */
+    transform: translateY(-16px);
+}
+
+.btn-line::after {
+    /* 下の線の位置 */
+    transform: translateY(16px);
+}
+
+  /***** メニューオープン時 *****/
+.btn.open {
+    transform: rotate(180deg);
+}
+    .btn-line.open {
+    /* 真ん中の線を透明に */
+    background-color: transparent;
+}
+
+    .btn-line.open::before,
+    .btn-line.open::after {
+    content: "";
+    /* 上下の線の色を変える */
+    background-color: #333;
+    transition: .2s;
+}
+
+.btn-line.open::before {
+    /* 上の線を傾ける */
+    transform: rotate(135deg);
+}
+
+.btn-line.open::after {
+    /* 上の線を傾ける */
+    transform: rotate(-135deg);
+}
+
+.menu {
+    position: fixed;
+    /* メニューの位置マイナス指定で画面外に */
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    /* メニューを縦に */
+    display: flex;
+    flex-direction: column;
+    color: #efefef;
+    background-color: rgba(167, 148, 58, 0.7);
+    transition: .3s;
+}
+
+.menu-list {
+    width: 100%;
+    height: 100%;
+    /* メニューテキスト位置をリスト内中心に */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-list:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: .3s;
+    cursor: pointer;
+}
+
+  /***** メニューオープン時位置0にして画面内に *****/
+.menu.open {
+    position: absolute;
+    right: 0;
+}
+
+/* ここまでハンバーガーメニュー */
+
+.pickup{
+    text-align:center;
+}
+
+.feature{
+    text-align:center;
+}
+
+.box-group1{
+    display: flex;
+}
+
+/* @media (min-width: 1000px){
+.box-group1{
+    display: flex;
+}
+} */
+
+/* @media (max-width: 1000px) {
+.box-group-respo1 {    
+    display: flex;
+}
+} */
+
+.sneakers-box1{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic1{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic1.view{
+    opacity: 1;
+}
+
+.category{
+    padding: 25px 0 5px 20px;
+    font-size: 13px;
+}
+
+.text{
+    padding: 15px 20px 5px 20px;
+}
+
+.day{
+    padding-right: 10px;
+    text-align: right;
+    font-size: 13px;
+}
+
+.sneakers-box2{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic2{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic2.view{
+    opacity: 1;
+}
+
+.sneakers-box3{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic3{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic3.view{
+    opacity: 1;
+}
+
+.box-group2{
+    display: flex;
+}
+
+.sneakers-box4{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic4{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic4.view{
+    opacity: 1;
+}
+
+.sneakers-box5{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic5{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic5.view{
+    opacity: 1;
+}
+
+.sneakers-box6{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic6{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic6.view{
+    opacity: 1;
+}
+
+.box-group3{
+    display: flex;
+}
+
+.sneakers-box7{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic7{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic7.view{
+    opacity: 1;
+}
+
+.sneakers-box8{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic8{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic8.view{
+    opacity: 1;
+}
+
+.sneakers-box9{
+    padding: 0 0 2em 0; /*余白*/
+    width: 33%;
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+    box-shadow: 0 0 8px 4px #ccc;
+    margin: 10px;
+}
+
+.sneakers-pic9{
+    width: 100%;
+    height: 300px;
+    opacity : 0;
+    transition: opacity 3s;
+}
+
+.sneakers-pic9.view{
+    opacity: 1;
+}
+
+.footer{
+    height: 580px;
+    width: 100%;
+	background: rgb(23, 22, 22);
+    color: #fff;
+}
+
+.footer-box{
+    display: flex;
+}
+
+.footer-textbox{
+    width: 47%;
+    margin-left: 10px;
+}
+
+.footer-text1{
+    margin: 0 5px 20px 10px;
+}
+
+.footer-text2{
+    margin: 30px 5px 20px 10px;
+}
+
+.footer-text3{
+    margin: 30px 5px 10px 10px;
+}
+
+.contact-title{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.contact{
+    width: 45%;
+    position: absolute;
+    right: 10px;
+}
+
+.contact-title{
+    margin-top: 100px;
+}
+
+.name-title{
+    position: relative;
+    left: 10px;
+}
+
+#name{
+    height: 40px;
+    width: 90%;
+    margin: 10px;
+}
+
+.mail-title{
+    position: relative;
+    top: 15px;
+    left: 13px;
+}
+
+#email{
+    height: 40px;
+    margin: 20px 10px 10px 10px;
+    width: 90%;
+}
+
+.message-box{
+    justify-content: center;
+    align-items: center;
+}
+
+.message-title{
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+#message{
+    height: 90px;
+    position: relative;
+    left: 9px;
+    margin-top: 25px;
+    width: 90%;
+}
+
+.send{
+    margin-top: 15px;
+    height: 55px;
+    width: 205px;    
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    position: relative;
+    top: 15px;
+    left:10px;
+}
+
+.send:hover{
+    color: black;
+    background-color: white;
+}
