@@ -1,9 +1,17 @@
+body {
+    padding-top: 90px; /* ヘッダーの後ろに要素が隠れないようにするため */
+}
+
 .header{
     display: flex;
 }
 
 .sneakers{
-    margin-left: 25px;
+    width: 100%; /* 幅いっぱいを指定 */
+    padding-left: 20px;
+    background: white;
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
 }
 
 .sneakers-video{
@@ -361,13 +369,31 @@
     color: #fff;
 }
 
+@media (max-width: 600px) {
+.footer {
+    height: 950px;
+}
+}
+
 .footer-box{
     display: flex;
+}
+
+@media (max-width: 600px) {
+.footer-box {
+    display:initial
+}
 }
 
 .footer-textbox{
     width: 47%;
     margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+.footer-textbox {
+    width: 100%;
+}
 }
 
 .footer-text1{
@@ -393,8 +419,23 @@
     right: 10px;
 }
 
+@media (max-width: 600px) {
+.contact {
+    width: 100%;
+    position: relative;
+    left: 10px;
+}
+}
+
 .contact-title{
     margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+.contact-title {
+    font-size: 25px;
+    padding-top: 90px;
+}
 }
 
 .name-title{
@@ -450,6 +491,12 @@
     position: relative;
     top: 15px;
     left:10px;
+}
+
+@media (max-width: 600px) {
+.send {
+    width: 90%;
+}
 }
 
 .send:hover{
