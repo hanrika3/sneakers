@@ -439,14 +439,17 @@ body {
 }
 
 .name-title{
-    position: relative;
-    left: 10px;
+    /* position: relative;
+    left: 1%;
+    bottom: 30px; */
 }
 
 #name{
     height: 40px;
     width: 90%;
     margin: 10px;
+    /* position: relative;
+    right: 5%; */
 }
 
 .mail-title{
