@@ -18,119 +18,150 @@ body {
     width: 100%;
 }
 
-/* ここからハンバーガーメニュー */
+/* ここから、ハンバーガーメニュー */
 
-.btn {
-    /* ボタンの配置位置  */
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    /* ボタンの大きさ  */
-    width: 48px;
-    height: 48px;
-    /* バーガーの線をボタン範囲の中心に配置 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 最前面に */
-    z-index: 10;
+html {
+    font-size: 100%;
+}
+body {
+    color: #121212;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+a {
+    color: #121212;
+    text-decoration: none;
+}
+/* img {
+    max-width: 100%;
+} */
+li {
+    list-style: none;
+}
+.site-title {
+    line-height: 1px;
+}
+.site-title a {
+    display: block;
+}
+.sec-title {
+    font-size: 2.25rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+/*
+フェード表示させる要素に使用するためのクラス
+*/
+.fadein {
+    opacity : 0;
+    transform: translateY(20px);
+    transition: all 1s;
 }
 
-  /***** 真ん中のバーガー線 *****/
-.btn-line {
-    /* 線の長さと高さ */
-    width: 100%;
-    height: 4px;
-    /* バーガー線の色 */
-    background-color: #333;
-    /* バーガー線の位置基準として設定 */
+/*
+ハンバーガーメニュー
+解説は、「中級編：ストアサイト（インテリア）」のCSS参照
+*/
+#navi {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    color: #fff;
+    padding: 60px 25px;
+    background-color: #121212;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .5s;
+    z-index: 20;
+    opacity: 0;
+}
+#navi a {
+    color: #fff;
+}
+.open #navi {
+    left: 0;
+    opacity: 1;
+}
+#navi ul {
+    margin: 0;
+    padding: 0;
+}
+#navi ul.nav-menu {
+    margin-bottom: 60px;
+    border-top: solid 1px #fff;
+}
+#navi ul.nav-menu li {
     position: relative;
-    transition: .2s;
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: solid 1px #fff;
 }
-
-  /***** 上下のバーガー線 *****/
-.btn-line::before,
-.btn-line::after {
-    content: "";
-    /* 基準線と同じ大きさと色 */
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
-    transition: .2s;
+#navi ul.nav-sns li {
+    padding: 5px 0;
 }
-
-.btn-line::before {
-    /* 上の線の位置 */
-    transform: translateY(-16px);
-}
-
-.btn-line::after {
-    /* 下の線の位置 */
-    transform: translateY(16px);
-}
-
-  /***** メニューオープン時 *****/
-.btn.open {
-    transform: rotate(180deg);
-}
-    .btn-line.open {
-    /* 真ん中の線を透明に */
-    background-color: transparent;
-}
-
-    .btn-line.open::before,
-    .btn-line.open::after {
-    content: "";
-    /* 上下の線の色を変える */
-    background-color: #333;
-    transition: .2s;
-}
-
-.btn-line.open::before {
-    /* 上の線を傾ける */
-    transform: rotate(135deg);
-}
-
-.btn-line.open::after {
-    /* 上の線を傾ける */
-    transform: rotate(-135deg);
-}
-
-.menu {
+.toggle_btn {
+    display: block;
     position: fixed;
-    /* メニューの位置マイナス指定で画面外に */
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    /* メニューを縦に */
-    display: flex;
-    flex-direction: column;
-    color: #efefef;
-    background-color: rgba(167, 148, 58, 0.7);
-    transition: .3s;
+    top: 25px;
+    right: 45px;
+    width: 30px;
+    height: 30px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 20;
 }
-
-.menu-list {
+.toggle_btn span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all .5s;
+}
+.toggle_btn span:nth-child(1) {
+    top: 4px;
+}
+.toggle_btn span:nth-child(2) {
+    top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+    bottom: 4px;
+}
+.open .toggle_btn span {
+    background-color: #fff;
+}
+.open .toggle_btn span:nth-child(1) {
+    -webkit-transform: translateY(10px) rotate(-315deg);
+    transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle_btn span:nth-child(2) {
+    opacity: 0;
+}
+.open .toggle_btn span:nth-child(3) {
+    -webkit-transform: translateY(-10px) rotate(315deg);
+    transform: translateY(-10px) rotate(315deg);
+}
+#mask {
+    display: none;
+    transition: all .5s;
+}
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    /* メニューテキスト位置をリスト内中心に */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu-list:hover {
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: .3s;
+    background: #000;
+    opacity: .8;
+    z-index: 10;
     cursor: pointer;
-}
-
-  /***** メニューオープン時位置0にして画面内に *****/
-.menu.open {
-    position: absolute;
-    right: 0;
 }
 
 /* ここまでハンバーガーメニュー */
