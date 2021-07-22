@@ -1,21 +1,21 @@
 body {
-    padding-top: 90px; /* ヘッダーの後ろに要素が隠れないようにするため */
+    padding-top: 60px; /*ヘッダーの後ろに要素が隠れないようにするため */
 }
 
-.header{
+/* .header{
     display: flex;
-}
+} */
 
 .sneakers{
     width: 100%; /* 幅いっぱいを指定 */
-    padding-left: 20px;
+    height: 75px;
+    padding-left: 30px;
+    padding-top: 13px;
+    font-size: 35px;
     background: white;
     position: fixed; /* ウィンドウを基準に画面に固定 */
-    top: 0; /* 上下の固定位置を上から0pxにする */
-}
-
-.sneakers-video{
-    width: 100%;
+    top: -24px; /* 上下の固定位置を上から0pxにする */
+    /* font-family: "arial black"; */
 }
 
 /* ここから、ハンバーガーメニュー */
@@ -166,9 +166,33 @@ li {
 
 /* ここまでハンバーガーメニュー */
 
-.pickup{
+.sneakers-video{
+    width: 100%;
+}
+
+.pickup-title{
     text-align:center;
 }
+
+/*-------------------------------------------
+Pickup
+-------------------------------------------*/
+/* #pickup {
+    width: 100%;
+    padding: 100px 0 50px 0;
+}
+#pickup .slick-area {
+    font-size: 0;
+}
+#pickup .slick-area li {
+    padding: 0 100px;
+}
+
+#pickuo .sneakers-pickup1{
+    width: 3px;
+    height: 200px; */
+}
+  /* pickupここまで */
 
 .feature{
     text-align:center;

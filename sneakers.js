@@ -6,29 +6,29 @@ $(function(){
     ===================================================*/
     // ハンバーガーメニューのクリックイベント
     // 解説は、「中級編：ストアサイト（インテリア）」参照
-    $('.toggle_btn').on('click', function() {
+$('.toggle_btn').on('click', function() {
     if (!$('#header2').hasClass('open')) {
         $('#header2').addClass('open');
     } else {
-        $('#header2').removeClass('open');
-    }
-    });
+$('#header2').removeClass('open');
+}
+});
 
     // #maskのエリアをクリックした時にメニューを閉じる
-    $('#mask').on('click', function() {
-    $('#header2').removeClass('open');
-    });
+$('#mask').on('click', function() {
+$('#header2').removeClass('open');
+});
 
     // リンクをクリックした時にメニューを閉じる
-    $('#navi a').on('click', function() {
-    $('#header2').removeClass('open');
-    });
+$('#navi a').on('click', function() {
+$('#header2').removeClass('open');
+});
 
     /*=================================================
     スムーススクロール
     ===================================================*/
     // ページ内リンクのイベント
-    $('a[href^="#"]').click(function(){
+$('a[href^="#"]').click(function(){
       // リンクを取得
     let href= $(this).attr("href");
       // ジャンプ先のid名をセット
@@ -37,30 +37,22 @@ $(function(){
     let position = target.offset().top;
       // animateでスムーススクロールを行う
       // 600はスクロール速度で単位はミリ秒
-    $("html, body").animate({scrollTop:position}, 600, "swing");
+$("html, body").animate({scrollTop:position}, 600, "swing");
     return false;
-    });
+});
+
+//   ここまでハンバーガーメニュー
 
     /*=================================================
     PICK UP スライダー
     ===================================================*/
     // カルーセル用 jQueryプラグイン「slick」の設定
     // マニュアル：https://kenwheeler.github.io/slick/
-    $('.slick-area').slick({
-    arrows: false,
-    centerMode: true,
-    centerPadding: '100px',
-    slidesToShow: 3,
-    responsive: [
-        {
-        breakpoint: 768,
-        settings: {
-            centerPadding: '50px',
-            slidesToShow: 1
-        }
-        }
-    ]
-    });
+    $('.multiple-items').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
 
     /*=================================================
     スクロール時の画像フェード表示
@@ -84,8 +76,6 @@ $(function(){
     });
     });
 });
-
-//   ここまでハンバーガーメニュー
 
 $(function () {
     $(window).scroll(function () {
